@@ -6,10 +6,10 @@ export const sendOTPEmail = async (email: string, otp: string, name: string = 'U
   console.log(`Attempting to send OTP via EmailJS to ${email}`);
 
   const data = {
-    service_id: 'service_c4vpo1p',
-    template_id: 'template_7blk1ch',
-    user_id: 'XfIj_4J13gpzqBSbN',
-    accessToken: 'smoSJUGOvKqYjQvUE4tWZ', // Private Key for strict mode
+    service_id: 'service_42n4c9b',
+    template_id: 'template_cf0tthc',
+    user_id: 'rSrvPFbN29iAfnDMs',
+    accessToken: 'T6_2Nu_KF8uQ6ML7wV7ZB', // Private Key for strict mode
     template_params: {
       otp: otp,
       to_email: email,

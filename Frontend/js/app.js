@@ -211,12 +211,29 @@ function renderFollowUpStep(complaintText, aiQuestion) {
 
     document.getElementById('final-submit').addEventListener('click', async () => {
         const userAnswer = document.getElementById('user-answer').value;
+        const btn = document.getElementById('final-submit');
+        btn.textContent = 'Submitting...';
+        btn.disabled = true;
+
         try {
+            // Send email notification via EmailJS
+            await emailjs.send('service_42n4c9b', 'template_cf0tthc', {
+                user_name: currentUser.name,
+                user_email: currentUser.email,
+                complaint_text: complaintText,
+                ai_question: aiQuestion,
+                user_answer: userAnswer
+            });
+
+            // Still save to backend for dashboard persistence
             await api.post('/complaints', { complaintText, aiQuestion, userAnswer });
-            toast.show('Complaint submitted successfully!');
+            
+            toast.show('Complaint submitted and email sent successfully!');
             navigate('my');
         } catch (err) {
-            toast.error(err.message);
+            toast.error('Submission failed: ' + err.message);
+            btn.textContent = 'Submit Complaint';
+            btn.disabled = false;
         }
     });
 }
