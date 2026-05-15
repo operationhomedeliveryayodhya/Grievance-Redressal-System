@@ -1,5 +1,5 @@
 //const BACKEND_BASE_URL = 'http://localhost:3000';
-const BACKEND_BASE_URL = 'https://operationhomedeliveryayodhya.github.io/Grievance-Redressal-System/Frontend';
+const BACKEND_BASE_URL = 'https://grievance-redressal-system-qing.onrender.com';
 const API_BASE = `${BACKEND_BASE_URL}/api`;
 
 const api = {
