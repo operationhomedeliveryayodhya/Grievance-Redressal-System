@@ -1,5 +1,5 @@
 //const BACKEND_BASE_URL = 'http://localhost:3000';
-const BACKEND_BASE_URL = 'https://complaints-registration-platform-full-tmid.onrender.com';
+const BACKEND_BASE_URL = 'https://operationhomedeliveryayodhya.github.io/Grievance-Redressal-System/Frontend';
 const API_BASE = `${BACKEND_BASE_URL}/api`;
 
 const api = {
@@ -7,7 +7,7 @@ const api = {
         const res = await fetch(`${API_BASE}${endpoint}`, {
             credentials: 'include'
         });
-        
+
         let data;
         const contentType = res.headers.get("content-type");
         if (contentType && contentType.includes("application/json")) {
